@@ -6,8 +6,8 @@ the tls save the addr of cur g
 use the assembly to acquire the g
 ```assembly
 TEXT ·getG(SB),NOSPLIT,$0-8
-	MOVQ (TLS), R14
-	MOVQ R14, ret+0(FP)
+	MOVQ (TLS), AX
+	MOVQ AX, ret+0(FP)
 	RET
 ``` 
 and then count the offset of goid in g
