@@ -4,12 +4,10 @@ import (
 	"unsafe"
 )
 
-var offset uintptr
+var offset =unsafe.Offsetof((*g)(nil).goid)
 
-func init() {
-	gg := (*g)(nil)
-	offset = unsafe.Offsetof(gg.goid)
-}
+
+func Goid() int64
 
 func getG() uintptr
 
